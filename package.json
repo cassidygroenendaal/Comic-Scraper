@@ -1,0 +1,24 @@
+{
+  "name": "hw-11-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cassidygroenendaal/HW-11-Scraper.git"
+  },
+  "keywords": [],
+  "author": "Cassidy Groenendaal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cassidygroenendaal/HW-11-Scraper/issues"
+  },
+  "homepage": "https://github.com/cassidygroenendaal/HW-11-Scraper#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.6.11"
+  }
+}
