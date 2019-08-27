@@ -77,6 +77,10 @@ app.get("/api/comics", (req, res) => {
   console.log("This is the ARTICLES route");
 });
 
+app.delete("/api/comics", (req, res) => {
+  db.Comic.deleteMany({}).then(() => res.end()).catch((err) => console.log(err));
+});
+
 app.get("/api/comics/:id", (req, res) => {
   console.log(`This is the GET ARTICLES route id #${req.params.id}`);
 });
