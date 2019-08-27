@@ -35,7 +35,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 //--------------------------------------
 
 app.get("/", function(req, res) {
-  res.render("index");
+  db.Comic.find({}, (err, foundComics) => res.render("index", { comic: foundComics }));
 });
 
 app.get("/api/scrape", (req, res) => {
@@ -66,22 +66,22 @@ app.get("/api/scrape", (req, res) => {
         newComic.author = author || "Not Available";
         newComic.image = image || "Not Available";
         newComic.link = link || "Not Available";
-        db.Comic.create(newComic).then().catch((err) => console.log(err));
+        db.Comic.create(newComic).then().catch((err) => {});
       });
       res.status(200).end();
     })
     .catch((err) => console.log(err));
 });
 
-app.get("/api/articles", (req, res) => {
+app.get("/api/comics", (req, res) => {
   console.log("This is the ARTICLES route");
 });
 
-app.get("/api/articles/:id", (req, res) => {
+app.get("/api/comics/:id", (req, res) => {
   console.log(`This is the GET ARTICLES route id #${req.params.id}`);
 });
 
-app.post("/api/articles/:id", (req, res) => {
+app.post("/api/comics/:id", (req, res) => {
   console.log(`This is the POST ARTICLES route id #${req.params.id}`);
 });
 

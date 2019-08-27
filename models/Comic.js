@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const ComicSchema = new Schema({
   title: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   author: {
     type: String,
