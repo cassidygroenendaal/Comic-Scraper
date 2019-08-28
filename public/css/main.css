@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+button {
+  display: block;
+  margin: 0.3em 0;
+  cursor: pointer;
+}
+
+#comics {
+  float: left;
+  width: 50%;
+  height: 55vh;
+  margin-top: 2em;
+  overflow-y: scroll;
+}
+
+.comic-block {
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+.comic-block:hover {
+  background: paleturquoise;
+  text-decoration: underline;
+}
+
+#notes {
+  float: right;
+  width: 40%;
+  height: 50vh;
+  margin-top: 2em;
+}
+
+#input-title {
+  display: block;
+  padding: 0.5em;
+  font-size: 1em;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+#input-body {
+  display: block;
+  padding: 0.5em;
+  font-size: 1em;
+  width: 100%;
+  height: 80px;
+}
