@@ -15,6 +15,7 @@ const db = require("../models");
 // ROUTES
 //--------------------------------------
 
+// SCRAPE ROUTE
 router.get("/scrape", (req, res) => {
   axios
     .get("https://www.hiveworkscomics.com/")
@@ -50,20 +51,45 @@ router.get("/scrape", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+// GET ALL COMICS
 router.get("/comics", (req, res) => {
-  res.send("This is the ARTICLES route");
+  db.Comic
+    .find({})
+    .then((foundComics) => res.json(foundComics))
+    .catch((err) => res.json(err));
 });
 
+// DELETE ALL COMICS
 router.delete("/comics", (req, res) => {
   db.Comic.deleteMany({}).then(() => res.end()).catch((err) => console.log(err));
 });
-
-router.get("/comics/:id", (req, res) => {
-  res.send(`This is the GET ARTICLES route id #${req.params.id}`);
+// DELETE ALL COMICS
+router.delete("/notes/:id", (req, res) => {
+  db.Note.deleteOne({_id: req.params.id}).then(() => res.end()).catch((err) => console.log(err));
 });
 
+// GET ONE COMIC
+router.get("/comics/:id", (req, res) => {
+  db.Comic
+    .findOne({ _id: req.params.id })
+    .populate("note")
+    .then((foundComic) => res.json(foundComic))
+    .catch((err) => res.json(err));
+});
+
+//CREATE ONE COMIC
 router.post("/comics/:id", (req, res) => {
-  console.log(`This is the POST ARTICLES route id #${req.params.id}`);
+  db.Note
+    .create(req.body)
+    .then((newNote) =>
+      db.Comic.findOneAndUpdate(
+        { _id: req.params.id },
+        { note: newNote._id },
+        { new: true }
+      )
+    )
+    .then((updatedComic) => res.json(updatedComic))
+    .catch((err) => res.json(err));
 });
 
 module.exports = router;

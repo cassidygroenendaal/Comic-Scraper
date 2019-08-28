@@ -1,15 +1,29 @@
-<button id="btn-scrape">Get New Comics</button>
-<button id="btn-delete">Delete Old Comics</button>
-<ul>
-  {{#each comic}}
-  <li>{{title}}</li>
-  <li>Written by: {{author}}</li>
-  {{#if hasArtist}}
-  <li>Drawn by: {{artist}}</li>
-  {{/if}}
-  <img src="{{image}}" alt="{{title}}">
-  <a href="{{link}}">Read Now!</a>
-  {{/each}}
-</ul>
+<main style="width: 80%; margin: 0 auto;">
+
+  <h1>Leave a note on your favorite webcomic!</h1>
+  <small>
+    Note: Deleting the old comics will delete any associated notes as well.
+  </small>
+  <br>
+  <br>
+  <button id="btn-scrape">Get New Comics</button>
+  <button id="btn-delete">Delete Old Comics</button>
+  <div id="comics" style="float: left; width: 50%; height: 65vh; margin-top: 3em;
+    overflow-y: scroll;">
+    {{#each comic}}
+    <div class="comic-block" data-id="{{_id}}">
+      <h3>{{title}}</h3>
+      <p>Written by: {{author}}</p>
+      {{#if hasArtist}}
+      <p>Drawn by: {{artist}}</p>
+      {{/if}}
+      <a href="{{link}}">Read Now!</a>
+      <img src="{{image}}" alt="{{title}}">
+    </div>
+    {{/each}}
+  </div>
+
+  <div id="notes" style="float: right; width: 40%; height: 50vh; margin-top: 3em;"></div>
+</main>
 
 <script src="js/app.js"></script>
