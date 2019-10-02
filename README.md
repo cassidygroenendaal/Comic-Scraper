@@ -8,4 +8,4 @@ Click a comic to leave a note on it. Click Add Note to save your note. You may a
 
 If you want to reset the database and start from scratch, click Delete Old Comics, then click Get New Comics.
 ## Development
-This app was developed using HTML, SASS/SCSS, JavaScript, and jQuery + AJAX. We also used the Ticketmaster and Google Maps APIs.
+This app was developed using Handlebars, Node, Express, MongoDB, Mongoose, Axios, and Cheerio.
