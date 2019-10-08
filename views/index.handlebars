@@ -21,12 +21,13 @@
       {{#each comic}}
       <div class="comic-block" data-id="{{_id}}">
         <img src="{{image}}" alt="{{title}}">
-        <h3>{{title}}</h3>
-        <p>Written by: {{author}}</p>
+        <h3 class="comic-block__title">{{title}}</h3>
+        <p class="comic-block__byline">Written by: {{author}}</p>
         {{#if hasArtist}}
-        <p>Drawn by: {{artist}}</p>
+        <p class="comic-block__byline">Drawn by: {{artist}}</p>
         {{/if}}
-        <a href="{{link}}">Read Now!</a>
+        <a href="{{link}}" class="comic-block__link" target="_blank">Read
+          Now!</a>
       </div>
       {{/each}}
     </div>

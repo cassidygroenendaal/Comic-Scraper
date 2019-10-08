@@ -37,14 +37,19 @@ button {
 #btn-scrape,
 #btn-delete,
 #btn-add-note,
-#btn-delete-note {
+#btn-delete-note,
+.comic-block__link {
 	padding: 0.8em 1.1em;
+	border-radius: 5px;
+	font-size: 0.9em;
+	border: 1px solid #000;
 }
 
 #btn-scrape,
 #btn-add-note {
 	background: lightgreen;
 	margin-right: 0.6em;
+	border-color: green;
 }
 
 #btn-scrape:hover,
@@ -56,6 +61,7 @@ button {
 #btn-delete,
 #btn-delete-note {
 	background: pink;
+	border-color: red;
 }
 
 #btn-delete:hover,
@@ -76,9 +82,38 @@ button {
 	padding: 0.5em;
 }
 
+.comic-block:nth-child(2n) {
+	background: #2e2e2e;
+	color: #fff;
+}
+
 .comic-block:hover {
 	background: paleturquoise;
-	text-decoration: underline;
+	color: #000;
+	/* text-decoration: underline; */
+}
+
+.comic-block__title {
+	margin-bottom: 0;
+}
+
+.comic-block__byline {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.comic-block__link {
+	margin-top: 1em;
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	background: lightblue;
+	border-color: blue;
+}
+
+.comic-block__link:hover {
+	background: blue;
+	color: #fff;
 }
 
 #notes {
