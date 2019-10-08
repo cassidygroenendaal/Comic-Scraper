@@ -1,6 +1,6 @@
 # Comic Scraper
 ## Deployed Link
-https://agile-fortress-80352.herokuapp.com/
+https://safe-garden-35398.herokuapp.com/
 ## Overview
 This app scrapes a webcomic site and stores the titles of the comics in a database. Users can leave notes on any of these comics, and the notes are also stored. Users can see notes left by other users.
 ## How to Use It
