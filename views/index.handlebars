@@ -1,28 +1,38 @@
-<main>
 
-  <h1>Leave a note on your favorite webcomic!</h1>
-  <small>
-    Note: Deleting the old comics will delete any associated notes as well.
+<header class="header">
+  <h1 class="header__heading">Leave a note on your favorite webcomic!</h1>
+  <small class="header__note">
+    Note: This site is purely for demonstration purposes. Notes left
+    here will not be left on the actual comic.
   </small>
-  <br>
-  <br>
-  <button id="btn-scrape">Get New Comics</button>
-  <button id="btn-delete">Delete Old Comics</button>
-  <div id="comics">
-    {{#each comic}}
-    <div class="comic-block" data-id="{{_id}}">
-      <h3>{{title}}</h3>
-      <p>Written by: {{author}}</p>
-      {{#if hasArtist}}
-      <p>Drawn by: {{artist}}</p>
-      {{/if}}
-      <a href="{{link}}">Read Now!</a>
-      <img src="{{image}}" alt="{{title}}">
-    </div>
-    {{/each}}
-  </div>
+</header>
 
-  <div id="notes"></div>
+<main>
+  <div class="btn-group">
+    <button id="btn-scrape">Get New Comics</button>
+    <button id="btn-delete">Delete Old Comics</button>
+  </div>
+  <small>
+    Deleting the old comics will delete any associated notes as
+    well.
+  </small>
+  <div class="clearfix">
+    <div id="comics">
+      {{#each comic}}
+      <div class="comic-block" data-id="{{_id}}">
+        <img src="{{image}}" alt="{{title}}">
+        <h3>{{title}}</h3>
+        <p>Written by: {{author}}</p>
+        {{#if hasArtist}}
+        <p>Drawn by: {{artist}}</p>
+        {{/if}}
+        <a href="{{link}}">Read Now!</a>
+      </div>
+      {{/each}}
+    </div>
+
+    <div id="notes"></div>
+  </div>
 </main>
 
 <script src="js/app.js"></script>

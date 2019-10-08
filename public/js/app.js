@@ -42,13 +42,14 @@ $("#comics").on("click", ".comic-block", function() {
       $("#notes").append(`<h2>${foundComic.title}</h2>`);
       $("#notes").append("<input id='input-title' name='title'>");
       $("#notes").append("<textarea id='input-body' name='body'></textarea>");
-      $("#notes").append(
+      $("#notes").append("<div class='btn-group' id='btn-notes'></div>")
+      $("#btn-notes").append(
         `<button id="btn-add-note" data-id="${foundComic._id}">Add Note</button>`
       );
       if (foundComic.note) {
         $("#input-title").val(foundComic.note.title);
         $("#input-body").val(foundComic.note.body);
-        $("#notes").append(
+        $("#btn-notes").append(
           `<button id="btn-delete-note" data-id="${foundComic.note
             ._id}">Delete Note</button>`
         );
